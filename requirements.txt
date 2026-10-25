@@ -1,0 +1,37 @@
+# ==============================================================================
+# Generative Engine Optimization (GEO) Framework for Privacy-Preserving Healthcare AI
+# Department of Computer Science & Engineering (AI & ML), SIT Tumakuru
+# Mini-Project V Semester (Phase 1/2)
+# ==============================================================================
+
+# Core Data & Numerical Processing
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+
+# Privacy & De-Identification Engine (Two-Guard Firewall)
+spacy>=3.7.0
+# Note: Model en_core_web_sm is installed via: python -m spacy download en_core_web_sm
+
+# Embeddings & Vector Store
+sentence-transformers>=2.2.2
+torchvision>=0.18.0
+chromadb>=0.4.22
+
+# LLM Inference (Local Ollama / OpenAI-compatible endpoint & optional API fallback)
+requests>=2.31.0
+openai>=1.10.0
+python-dotenv>=1.0.0
+
+# Interactive Web Application
+streamlit>=1.30.0
+
+# Evaluation & Metrics (GEO vs Baseline & RAG Faithfulness)
+ragas>=0.1.0
+datasets>=2.14.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities & Testing
+tqdm>=4.66.0
+pytest>=7.4.0

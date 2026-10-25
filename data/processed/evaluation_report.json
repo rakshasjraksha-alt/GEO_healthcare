@@ -1,0 +1,51 @@
+{
+  "privacy_firewall_metrics": {
+    "total_test_queries": 100,
+    "total_ground_truth_pii": 145,
+    "true_positives": 142,
+    "false_negatives": 3,
+    "false_positives": 0,
+    "true_negatives": 15,
+    "precision": 1.0,
+    "recall": 0.9793,
+    "f1_score": 0.9895,
+    "pii_leak_rate_pct": 2.07,
+    "over_redaction_rate_pct": 0.0,
+    "eponyms_tested": 20,
+    "eponyms_preserved": 20
+  },
+  "ablation_study_metrics": {
+    "num_queries_evaluated": 10,
+    "geo_mean_similarity": 0.5192,
+    "fixed_mean_similarity": 0.5151,
+    "geo_fragmentation_pct": 0.0,
+    "fixed_fragmentation_pct": 100.0,
+    "geo_provenance_pct": 100.0,
+    "fixed_provenance_pct": 100.0,
+    "geo_faithfulness_score": 0.94,
+    "fixed_faithfulness_score": 0.72
+  },
+  "failure_cases": [
+    {
+      "query_id": "PRIV_EDGE_001",
+      "category": "adversarial_spaced_digits_phone",
+      "missed_pii": "9 8 7 6 5 4 3 2 1 0",
+      "raw_text": "My contact is 9 8 7 6 5 4 3 2 1 0. Blood sugar 230.",
+      "sanitized_output": "My contact is 9 8 7 6 5 4 3 2 1 0. Blood sugar 230."
+    },
+    {
+      "query_id": "PRIV_EDGE_003",
+      "category": "adversarial_obfuscated_email",
+      "missed_pii": "patient dot rahul at gmail dot com",
+      "raw_text": "Email me at patient dot rahul at gmail dot com for report.",
+      "sanitized_output": "[REDACTED_NAME] me at patient dot rahul at gmail dot com for report."
+    },
+    {
+      "query_id": "PRIV_EDGE_007",
+      "category": "adversarial_partial_dob_year_only",
+      "missed_pii": "1990",
+      "raw_text": "I was born in the year 1990 month of April.",
+      "sanitized_output": "I was born in the year 1990 month of April."
+    }
+  ]
+}
